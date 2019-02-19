@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,15 +15,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'remember_token',
+        'facebook_id',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * Get the scancodes of the user.
      *
-     * @var array
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function scancode()
+    {
+        return $this->hasMany(ScanCode::class);
+    }
 }

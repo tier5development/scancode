@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::namespace('Api')->group(function () {
+    Route::get('/access-tokens/page', 'AccessTokensController@index')->name('access_token.index');
+    Route::post('/scancodes', 'ScanCodesController@store')->name('scancode.store');
 });

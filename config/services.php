@@ -30,9 +30,19 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => App\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_KEY'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI'),
+        'api_version' => env('FACEBOOK_API_VERSION'),
+        'default' => [
+            'user_id' => env('FACEBOOK_DEFAULT_USER_ID'),
+            'page_id' => env('FACEBOOK_DEFAULT_PAGE_ID'),
+        ],
+    ],
 ];
