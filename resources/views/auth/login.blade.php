@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center align-item-center">
-        <div class="col-md-8 text-center">
-            <div class="row justify-content-center align-item-center">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <div class="row justify-content-center">
                 <br>
-                <h1 class="text-center">FB Scan Code Generator</h1>
+                <h1 style="flex: 100%;">FB Scan Code Generator</h1>
                 <h2>A Free Tool with &#x1F496; by <a href="https://www.facebook.com/king.jon.vaughn" target="_blank">Jon Vaughn</a></h2>
-                <iframe id="ytVideo" width="100%" height="420" src="https://www.youtube.com/embed/xvAe0iBDHNA?autoplay=1" frameborder="0"
-                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3>Tier5 Affiliates please generate a scancode <a href="{{ route('tier5') }}">here</a> for Tier5 page</h3>
+                <iframe id="ytVideo" width="100%" height="644" src="https://www.youtube.com/embed/xvAe0iBDHNA?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <br>
             <div id="spinner"
@@ -42,10 +42,9 @@
                         <h5 class="card-title">Latest Scancodes...</h5>
                         <p class="card-text">
                             <div class="row justify-content-center align-item-center">
-                                {{-- {{dd($scancodes)}} --}}
                                 @foreach ($scancodes as $scancode)
-                                    <div class="col-md-2 col-sm-12">
-                                        <img height="100" width="100" src="{{ $scancode->scan_code_uri }}" alt="{{ $scancode->facebook_page_name }}" srcset="{{ $scancode->scan_code_uri }}" data-toggle="tooltip" title="{{ $scancode->facebook_page_name }}" />
+                                    <div class="col-sm-4">
+                                        <img height="200" width="200" src="{{ $scancode->scan_code_uri }}" alt="{{ $scancode->facebook_page_name }}" srcset="{{ $scancode->scan_code_uri }}" data-toggle="tooltip" title="{{ $scancode->facebook_page_name }}" />
                                     </div>
                                 @endforeach
                             </div>
